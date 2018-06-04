@@ -33,7 +33,16 @@
             <li>Connected 3 axmans to the bus configured to send different messages. Confirmed messages are being sent, recieved, and stored</li>
             <li>Set one axman to send on an id not supported by the filters (ID 300) confirmed that the boards see the message on the bus, but will not store them</li>
         </ul>
-
+		<h2>Week 4</h2>
+		<ul>
+			<li>Ristricted filters on Axmans to ID 100 exclusively, allowing for only elevator controller messages to be recieved</li>
+			<li>Modified the sample pi code to allow for an additional function. This function listens for messages on the bus and relays adiquate messages to the elevator controller. The code also displays recieved messages on the bus on screen for debug purposes</li>
+			<li>Created elevator car code, Hamza added a 7 segment and multiple buttons. We integrated them into Ports A and B respectively. We then used the built in buttons to control the door open and closed functions.</li>
+			<li>Updated Floor controllers to use external buttons to request a floor as well as sync elevator position with the elevator controller and the elevator car. No longer request floor by resetting board</li>
+			<li>Offered notes for the test plan</li>
+			<li>Assisted with testing of total functionality</li>
+		</ul>	
+			
 
 
 
