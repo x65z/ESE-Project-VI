@@ -1,0 +1,47 @@
+a:link.menu{
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+
+a:visited.menu{
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover.menu{
+  font-weight: bold;
+  background-color: gray;
+}
+
+a:active.menu{
+  font-weight: bold;
+  color: orange;
+}
+
+input.submit{
+  background-color: blue;
+  color: white;
+}
+
+input.submit:hover{
+  background-color: white;
+  color: blue;
+}
+
+input.submit:active{
+  color: orange;
+}
+
+input.text, textarea.text{
+  color: gray;
+}
+
+input.text:focus, textarea.text:focus{
+  color: black;
+}
+
+li.h_menu{
+  display: inline;
+}

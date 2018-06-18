@@ -1,0 +1,35 @@
+input.submit{
+  background-color: blue;
+  color: white;
+}
+
+input.submit:hover{
+  background-color: white;
+  color: blue;
+}
+
+input.submit:active{
+  color: orange;
+}
+
+input.text, textarea.text{
+  color: gray;
+}
+
+input.text:focus, textarea.text:focus{
+  color: black;
+}
+
+.text_label{
+  color: red;
+  float:left;
+  width: 100px;
+  text-align: right;
+  padding: 0px 10px 0px 0px;
+}
+
+.text_input{
+  width: 164px;
+  text-align: left;
+  paddig: 0px 0px 0px 10px
+}

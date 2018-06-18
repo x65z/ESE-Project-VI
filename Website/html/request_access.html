@@ -3,22 +3,25 @@
 
 	<head>
 		<title>Request Access</title>
+
+	<!--<link href="../css/request_access_style.css" type="text/css" rel="stylesheet" />-->
 	</head>
 	<body>
 		<h1>Request Access</h1>
 		<form action="../php/request_acc.php" method="post" id="access">
 			<fieldset>
-				<legend>Contact Details</legend>
-				<p><label>First Name: <input type="text" name="firstname" /></label></p>
-				<p><label>Last Name: <input type="text" name="lastname" /></label></p>
-				<p><label>Email: <input type="email" name="email" /></label></p>
-				<p><label>Website: <input type="url" name="url" /></label></p>
-				<p><label>Date of Brith: <input type="date" name="birthday" /></label></p>
-			
+				<legend class="contact">Contact Details</legend>
+				<p><label class="text_label">First Name: <input class="text_input" type="text" name="firstname" /></label></p>
+				<p><label class="text_label">Last Name: <input class="text_input" type="text" name="lastname" /></label></p>
+				<p><label class="text_label">Email: <input class="text_input" type="email" name="email" /></label></p>
+				<p><label class="text_label">Website: <input class="text_input" type="url" name="url" /></label></p>
+				<p><label class="text_label">Date of Brith: <input class="text" type="date" name="birthday" /></label></p>
+
+				<label class="text_label">Request type:</label>
 				<label><input type="radio" name="fac_or_student" value="faculty" /> Faculty </label>
 				<label><input type="radio" name="fac_or_student" value="student" /> Student </label>
 			</fieldset>
-				
+
 			<p>I currently... (check all that apply)</p>
 			<label><input type="checkbox" name="involvement" value="none" /> Have no involvment in Project</label> <br />
 			<label><input type="checkbox" name="involvement" value="instructor" /> An instructor in this Project</label> <br />
@@ -27,11 +30,11 @@
 			<label><input type="checkbox" name="involvement" value="student_other" /> A student in a different Project</label> <br />
 			<label><input type="checkbox" name="involvement" value="admin" /> A College Administrator</label> <br />
 			<label><input type="checkbox" name="involvement" value="external" /> An external reviewer</label> <br />
-			
+
 			<p>Tell us a bit about yourself</p>
-			<textarea>Other details...</textarea> <br />
-			<input type="submit" value="Submit Request" />
-			
+			<textarea class="text">Other details...</textarea> <br />
+			<input class="submit" type="submit" value="Submit Request" />
+
 			<p>Do you like my website?
 			<select name="likes_website">
 				<option value="no_answer" selected>---</option>
@@ -39,7 +42,7 @@
 				<option value="no">No</option>
 				</select>
 			</p>
-			
+
 		</form>
 	</body>
 </html>
