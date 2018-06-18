@@ -8,13 +8,14 @@ fieldset{
 
 }
  body{
-   background-image: url(avatar.jpg);
-   background-repeat: no-repeat;
-   background-size: auto;
+	padding-left: 15px;
+	background-image: url(avatar.jpg);
+	background-repeat: no-repeat;
+	background-size: auto;
  }
 
  .text_label{
-   color: orange;
+   color: black;
  }
 
  input.submit{
@@ -29,7 +30,7 @@ fieldset{
  }
 
  input.submit:active{
-   color: orange;
+   color: black;
  }
 
  input.text_input, textarea.text_input{
@@ -70,7 +71,7 @@ fieldset{
 	width:150px;
 	text-align: right;
 	padding-right: 5px;
-  color:orange;
+  color:black;
 }
 
 .text_input{
@@ -80,11 +81,20 @@ fieldset{
 }
 
 .request{
-  color: orange;
+  color: black;
 }
 
 .radio{
-  color: orange;
+  color: black;
+}
+
+.Warn{
+	color: red
+}
+
+.Hidden{
+	display: none;
+	visibility: hidden;
 }
 
 textarea{
