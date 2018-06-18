@@ -1,35 +1,98 @@
-input.submit{
-  background-color: blue;
-  color: white;
+fieldset{
+  margin: 1px 1px 1px 1px;
+  border-style: solid solid solid solid;
+  border-width: 2px 2px 2px 2px;
+  border-color: green;
+  border-radius: 25px
+
+
+}
+ body{
+   background-image: url(avatar.jpg);
+   background-repeat: no-repeat;
+   background-size: auto;
+ }
+
+ .text_label{
+   color: orange;
+ }
+
+ input.submit{
+   background-color: blue;
+   color: white;
+   margin: 5px 5px 5px 290px;
+ }
+
+ input.submit:hover{
+   background-color: white;
+   color: blue;
+ }
+
+ input.submit:active{
+   color: orange;
+ }
+
+ input.text_input, textarea.text_input{
+   color: gray;
+ }
+
+ input.text_input:focus, textarea.text_input:focus{
+   color: black;
+ }
+
+ input.text, textarea.text{
+   color: gray;
+ }
+
+ input.text:focus, textarea.text:focus{
+   color: black;
+ }
+
+.contact{
+  background-color: rgb(0,112,184);
+	color:white;
+	border-radius:5px;
 }
 
-input.submit:hover{
-  background-color: white;
-  color: blue;
+.field{
+  width: 350px
 }
 
-input.submit:active{
-  color: orange;
+.row{
+  padding: 2px 0px 2px 0px;
+}
+.submit{
+
 }
 
-input.text, textarea.text{
-  color: gray;
-}
-
-input.text:focus, textarea.text:focus{
-  color: black;
-}
-
-.text_label{
-  color: red;
+.textl{
   float:left;
-  width: 100px;
-  text-align: right;
-  padding: 0px 10px 0px 0px;
+	width:150px;
+	text-align: right;
+	padding-right: 5px;
+  color:orange;
 }
 
 .text_input{
   width: 164px;
   text-align: left;
-  paddig: 0px 0px 0px 10px
+  padding: 0px 0px 0px 5px
+}
+
+.request{
+  color: orange;
+}
+
+.radio{
+  color: orange;
+}
+
+textarea{
+  width: 400px;
+  height: 150px;
+  background-image: url(Witcher.jpg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: auto 100px;
+
 }

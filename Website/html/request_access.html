@@ -4,38 +4,62 @@
 	<head>
 		<title>Request Access</title>
 
-	<!--<link href="../css/request_access_style.css" type="text/css" rel="stylesheet" />-->
+	<link href="../css/request_access_style.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
-		<h1>Request Access</h1>
+		<h1 class="request">Request Access</h1>
 		<form action="../php/request_acc.php" method="post" id="access">
-			<fieldset>
-				<legend class="contact">Contact Details</legend>
-				<p><label class="text_label">First Name: <input class="text_input" type="text" name="firstname" /></label></p>
-				<p><label class="text_label">Last Name: <input class="text_input" type="text" name="lastname" /></label></p>
-				<p><label class="text_label">Email: <input class="text_input" type="email" name="email" /></label></p>
-				<p><label class="text_label">Website: <input class="text_input" type="url" name="url" /></label></p>
-				<p><label class="text_label">Date of Brith: <input class="text" type="date" name="birthday" /></label></p>
+			<fieldset class="field">
 
-				<label class="text_label">Request type:</label>
-				<label><input type="radio" name="fac_or_student" value="faculty" /> Faculty </label>
-				<label><input type="radio" name="fac_or_student" value="student" /> Student </label>
+				<legend class="contact">Contact Details</legend>
+        <div class="row">
+          <p>
+          <label class="textl">First Name: </label>
+          <input class="text_input" type="text" name="firstname" />
+        </p>
+        </div>
+        <div class="row">
+          <p><label class="textl">Last Name: </label>
+          <input class="text_input" type="text" name="lastname" />
+          </p>
+        </div>
+        <div class="row">
+          <p><label class="textl">Email: </label>
+          <input class="text_input" type="email" name="email" /></p>
+        </div>
+        <div class="row">
+          <p><label class="textl">Website: </label>
+          <input class="text_input" type="url" name="url" /></p>
+        </div>
+        <div class="row">
+          <p><label class="textl">Date of Brith: </label>
+          <input class="text_input" type="date" name="birthday" /></p>
+        </div>
+        <div class="row">
+          <p><label class="textl">Favourite Movie: </label>
+          <input class="text_input" type="text" name="favourite" /></p>
+        </div>
+        <div class="row">
+          <label class="textl">Request type:</label>
+          <label class="radio"><input type="radio" name="fac_or_student" value="faculty" /> Faculty </label>
+          <label class="radio"><input type="radio" name="fac_or_student" value="student" /> Student </label>
+        </div>
 			</fieldset>
 
-			<p>I currently... (check all that apply)</p>
-			<label><input type="checkbox" name="involvement" value="none" /> Have no involvment in Project</label> <br />
-			<label><input type="checkbox" name="involvement" value="instructor" /> An instructor in this Project</label> <br />
-			<label><input type="checkbox" name="involvement" value="instructor_other" /> An instructor in a different Project</label> <br />
-			<label><input type="checkbox" name="involvement" value="student" /> A student in this Project</label> <br />
-			<label><input type="checkbox" name="involvement" value="student_other" /> A student in a different Project</label> <br />
-			<label><input type="checkbox" name="involvement" value="admin" /> A College Administrator</label> <br />
-			<label><input type="checkbox" name="involvement" value="external" /> An external reviewer</label> <br />
+			<p class="text_label">I currently... (check all that apply)</p>
+			<label class="text_label"><input type="checkbox" name="involvement" value="none" /> Have no involvment in Project</label> <br />
+			<label class="text_label"><input type="checkbox" name="involvement" value="instructor" /> An instructor in this Project</label> <br />
+			<label class="text_label"><input type="checkbox" name="involvement" value="instructor_other" /> An instructor in a different Project</label> <br />
+			<label class="text_label"><input type="checkbox" name="involvement" value="student" /> A student in this Project</label> <br />
+			<label class="text_label"><input type="checkbox" name="involvement" value="student_other" /> A student in a different Project</label> <br />
+			<label class="text_label"><input type="checkbox" name="involvement" value="admin" /> A College Administrator</label> <br />
+			<label class="text_label"><input type="checkbox" name="involvement" value="external" /> An external reviewer</label> <br />
 
-			<p>Tell us a bit about yourself</p>
+			<p class="text_label">Tell us a bit about yourself</p>
 			<textarea class="text">Other details...</textarea> <br />
 			<input class="submit" type="submit" value="Submit Request" />
 
-			<p>Do you like my website?
+			<p class="text_label">Do you like my website?
 			<select name="likes_website">
 				<option value="no_answer" selected>---</option>
 				<option value="yes">Yes</option>
@@ -44,5 +68,6 @@
 			</p>
 
 		</form>
+    <p class="text_label">Copyright &copy 2018 Niv Segal</p>
 	</body>
 </html>
