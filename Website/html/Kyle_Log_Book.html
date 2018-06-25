@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <h1 id="banner"><a href="index.html" target="_blank" id="banner"><img src="../img/Team_Logo.png" alt="Home" title="Home" width="100"><a/>
 Weekly Log Book - Kyle Palmer</h1>
 <div class="tab_banner">
@@ -8,43 +9,42 @@ Weekly Log Book - Kyle Palmer</h1>
 <a href="Kyle_Log_Book.html#Week3" class="tab">Week 3</a>
 <a href="Kyle_Log_Book.html#Week4" class="tab">Week 4</a>
 <a href="Kyle_Log_Book.html#Week5" class="tab">Week 5</a>
-<a href="Kyle_Log_Book.html#Week6" class="tab">Week 6</a>
+<a href="Kyle_Log_Book.html#Week6" class="tab">Week 6</a> 
 </div>
+
 	<head>
 		<title>Log Book</title>
-
-        <link href="../css/KyleLog.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
+		<h1>Weekly Log Book - Kyle Palmer</h1>
 		<figure>
-			<img src="../img/GiantDad.jpg" alt="Dark Souls Meme Giant Dad"
-				 title="Kyle" width="200" />
-			<figcaption><b>Kyle:</b> Specialist in Distractions</figcaption>
+			<img src="../img/GiantDad.jpg" alt="Dark Souls Meme Giant Dad" 
+				 title="Kyle" width="175">
+			<figcaption><b>Kyle</b> Specialist in Distractions</figcaption>
 		</figure>
-		<hr />
-		<h2 id="Week1">Week 1</h2>
+		<h2>Week 1</h2>
 		<ul>
 			<li>Created GitHub account</li>
 			<li>Found personal HCS12 board at home</li>
 			<li>Set up local web server in Linux using VMware</li>
-      <li>Looked through the CAN code to better understand how everything is getting set up and configured</li>
-      <li>Have idea for during initialization. Wait loop after setting clock source to make sure board is synced to bus.</li>
+            <li>Looked through the CAN code to better understand how everything is getting set up and configured</li>
+            <li>Have idea for during initialization. Wait loop after setting clock source to make sure board is synced to bus.</li>
 		</ul>
-		<h2 id="Week2">Week 2</h2>
+		<h2>Week 2</h2>
 		<ul>
 			<li>Long Weekend, was busy with family</li>
 			<li>Studied for math quiz</li>
 		</ul>
-    <h2 id="Week3">Week 3</h2>
-    <ul>
-      <li>Configured filters for elevator floors, have two ranges right now, 101 and 200-203</li>
-      <li>Have the RxBuffer set to save to a location, will probably change this to a ring buffer</li>
-      <li>Found out half of our bus adapters were not built correctly, got Dave to fix them</li>
-      <li>Made the board send out a message once after initialization is done. Reset board to resend</li>
-      <li>Connected 3 axmans to the bus configured to send different messages. Confirmed messages are being sent, recieved, and stored</li>
-      <li>Set one axman to send on an id not supported by the filters (ID 300) confirmed that the boards see the message on the bus, but will not store them</li>
-    </ul>
-		<h2 id="Week4">Week 4</h2>
+        <h2>Week 3</h2>
+        <ul>
+            <li>Configured filters for elevator floors, have two ranges right now, 101 and 200-203</li>
+            <li>Have the RxBuffer set to save to a location, will probably change this to a ring buffer</li>
+            <li>Found out half of our bus adapters were not built correctly, got Dave to fix them</li>
+            <li>Made the board send out a message once after initialization is done. Reset board to resend</li>
+            <li>Connected 3 axmans to the bus configured to send different messages. Confirmed messages are being sent, recieved, and stored</li>
+            <li>Set one axman to send on an id not supported by the filters (ID 300) confirmed that the boards see the message on the bus, but will not store them</li>
+        </ul>
+		<h2>Week 4</h2>
 		<ul>
 			<li>Ristricted filters on Axmans to ID 100 exclusively, allowing for only elevator controller messages to be recieved</li>
 			<li>Modified the sample pi code to allow for an additional function. This function listens for messages on the bus and relays adiquate messages to the elevator controller. The code also displays recieved messages on the bus on screen for debug purposes</li>
@@ -68,8 +68,6 @@ Weekly Log Book - Kyle Palmer</h1>
 			<li>Fought with GitHub as it wouldn't share my updates</li>
 		</ul>
 
-		<p id='info'> This page shows Date () Object Example code</p>
-		<footer id='foot'>Hello</footer>
-		<script src="../js/Kyle_dateObjectModel.js"></script>
 	</body>
 </html>
+	
