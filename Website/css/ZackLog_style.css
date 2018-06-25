@@ -1,0 +1,52 @@
+﻿body {font-family: Helvetica, sans-serif;}
+
+
+p {color: black;
+   font-family: Helvetica, Times, sans-serif;
+}
+
+ul {color: black;
+   font-family: Helvetica, Times, sans-serif;
+}
+
+li {color: black;
+   font-family: Helvetica, Times, sans-serif;
+}
+
+
+h1 {color: black;
+    font-family: Helvetica, sans-serif;
+    }
+
+
+h2 {color: black;
+    font-family: Helvetica, sans-serif;
+    }
+
+#banner {
+width: 100%;
+color: Black;
+font-family: Helvetica, sans-serif;
+margin: 0px 0px 0px 0px;
+padding: 10px 10px 15px 5px;
+background-color: rgb(0, 128, 185);
+}
+
+.tab_banner {
+  width: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  color: darkgrey;
+  margin: 0px -5px 0px 0px;
+  padding: 10px 5px 10px 10px;
+  background-color: rgb(0, 128, 185);
+}
+
+.tab {
+  font-weight: bold;
+  text-decoration: none;
+  color: darkgrey;
+  margin: 0px -5px 0px 0px;
+  padding: 10px 5px 10px 10px;
+  background-color: rgb(0, 128, 185);
+}
