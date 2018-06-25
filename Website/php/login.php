@@ -1,5 +1,12 @@
 <?php
 $submitted = !empty($_POST);
+$username = $_POST['username'];
+$password = $_post['password'];
+
+echo "<p>Form submitted sucessfully (1 for true): $submitted </p>"
+echo "<p>Username received: $username </p>"
+echo "<p>Password received: $password </p>"
+
 ?>
 <!DOCTYPE html>
 <html>
