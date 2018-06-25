@@ -8,24 +8,26 @@
 	</head>
 	<body>
 		<h1 class="request">Request Access</h1>
-		<form action="../php/request_acc.php" method="post" id="access">
+		<form id="raform" action="../php/request_acc.php" method="post">
 			<fieldset class="field">
 
 				<legend class="contact">Contact Details</legend>
         <div class="row">
           <p>
           <label class="textl">First Name: </label>
-          <input class="text_input" type="text" name="firstname" />
+          <input id="fname" class="text_input" type="text" name="firstname" />
+		  <label id="fnamewarn" class="Warn2"></label>
         </p>
         </div>
         <div class="row">
           <p><label class="textl">Last Name: </label>
-          <input class="text_input" type="text" name="lastname" />
+          <input id="lname" class="text_input" type="text" name="lastname" />
+		  <label id="lnamewarn" class="Warn2"></label>
           </p>
         </div>
         <div class="row">
           <p><label class="textl">Email: </label>
-          <input class="text_input" type="email" name="email" /></p>
+          <input id="email" class="text_input" type="email" name="email" /></p>
         </div>
         <div class="row">
           <p><label class="textl">Website: </label>
@@ -33,17 +35,17 @@
         </div>
         <div class="row">
           <p><label class="textl">Date of Brith: </label>
-          <input class="text_input" type="date" name="birthday" /></p>
+          <input id="dob" class="text_input" type="date" name="birthday" /></p>
         </div>
         <div class="row">
           <label class="textl">Request type:</label>
-          <label class="radio"><input type="radio" name="fac_or_student" value="faculty" /> Faculty </label>
-          <label class="radio"><input type="radio" name="fac_or_student" value="student" /> Student </label>
+          <label class="radio"><input id="r1" type="radio" name="fac_or_student" value="faculty" /> Faculty </label>
+          <label class="radio"><input id="r2" type="radio" name="fac_or_student" value="student" /> Student </label>
         </div>
 			</fieldset>
 
 			<p class="text_label">I currently... (check all that apply)</p>
-			<label class="text_label"><input type="checkbox" name="involvement" value="none" /> Have no involvment in Project</label> <br />
+			<label class="text_label"><input type="checkbox" name="involvement" value="none" /> Have no involvement in Project</label> <br />
 			<label class="text_label"><input type="checkbox" name="involvement" value="instructor" /> An instructor in this Project</label> <br />
 			<label class="text_label"><input type="checkbox" name="involvement" value="instructor_other" /> An instructor in a different Project</label> <br />
 			<label class="text_label"><input type="checkbox" name="involvement" value="student" /> A student in this Project</label> <br />
@@ -61,27 +63,7 @@
 		</form>
     <p class="text_label">Copyright &copy 2018 Zack H - Niv Segal</p>
 	
-	<script>
-		var txtID = document.getElementById("txtDetails");
-		var remID = document.getElementById("remainingWarn");
-		var charCount = 180;
-		remID.classList.add("Hidden");
-		
-		event.preventDefault(); 
-		
-		function txtAreaWarn() {	
-			
-			if (txtID.value.length > 0){
-				
-				charCount = 180 - txtID.value.length
-				//alert(remID.innerHTML)
-				//alert(txtID.value.length)
-				remID.innerHTML = charCount.toString() + " characters remaining.";
-				remID.classList.remove("Hidden");
-			} else {
-				remID.classList.add("Hidden");
-			}
-		}
-	</script>
+	<script src="../js/RequestAccess.js"></script>
+
 	</body>
 </html>
