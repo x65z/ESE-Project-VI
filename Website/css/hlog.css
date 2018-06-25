@@ -1,0 +1,147 @@
+body {
+  min-height: 75rem; /* Can be removed; just added for demo purposes */
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+
+#heading{
+  width: 100%;
+  text-align:center;
+
+}
+.jumbotron {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+.album {
+  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+.card {
+  position:relative;
+  float:left;
+  height: 210px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+
+  border-style: none;
+  text-align: center;
+}
+
+
+
+.card > .front{
+  position:absolute;
+  /*-webkit-transform:perspective (600px) rotateY(0deg);*/
+  transform:perspective(600px) rotateY( 0deg );
+  background: lightgrey; height:209px;
+  backface-visibility: hidden;
+  transition: transform 0.3s linear 0s;
+
+}
+.card > .cardback{
+  width: 100%;
+  position:absolute;
+  transform:perspective(600px) rotateY( 180deg );
+  background: darkgrey; height: 209px;
+  backface-visibility: hidden;
+  transition: transform 0.3s linear 0s;
+}
+
+.card:hover > .front{
+  transform: perspective(600px) rotateY(-180deg);
+}
+.card:hover > .cardback{
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.card-img-top {
+
+height:9rem;
+
+
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  padding:10px 10px 10px 10px;
+  font-weight: bold;
+  font-size: 85%;
+  height: 100px;
+}
+
+.card-title {
+padding-top: 8px;
+}
+
+#card_box {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.9%;
+  padding-right: 1%;
+  width: 98%;
+}
+
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.button1 {
+    background-color: #4CAF50;
+    border:none;
+    color: white;
+    width:80px;
+    height:35px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.5s;
+    cursor:pointer;
+}
+
+.button1:hover{
+  background-color:#3399ff;
+    border:none;
+}
+.button1:active{
+  background-color:red;
+  transition-duration: 0.1s;
+      border:none;
+}
+.button1:visited{
+      border:none;
+}
