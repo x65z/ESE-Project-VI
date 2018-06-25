@@ -52,6 +52,12 @@
 		display: none;
 		visibility: hidden;
 	}
-
+	.InputBox{
+			width: 300px;
+	}
+	.Inp{
+		float: right;
+		clear: both;
+	}
 	
 	

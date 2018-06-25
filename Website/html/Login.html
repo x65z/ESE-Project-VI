@@ -8,21 +8,21 @@
 	<body>
 		<form action="../php/login.php" method="post" id="login">
 			<h1>Please log in</h1>
-			<div>
+			<div class="InputBox">
 				<p>Username:
-					<input id="UserN" type="text" name="username" onkeyup="userNameValidate()"/>
+					<input id="UserN" type="text" name="username" class="Inp"/>
 				</p>
 				<p>Password:
-					<input id="PassW" type="password" name="password" onkeyup="passwordValidate()"/>
+					<input id="PassW" type="password" name="password" class="Inp"/>
 				</p>
 			</div>
 			<input type="submit" value="Log in" />
 			<p><a href="request_access.html">Request Access</a></p>
 		</form>
 		<br>
-		<label id="PSWLengthWarn" class="Warn">*Password must be at least 7 characters.</label>
-		<br>
 		<label id="UNLengthWarn" class="Warn">*User name must be at least 7 characters.</label>
+		<br>
+		<label id="PSWLengthWarn" class="Warn">*Password must be at least 7 characters.</label>
 		<br>
 		
 		<script src="../js/login.js"></script>
