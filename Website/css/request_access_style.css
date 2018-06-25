@@ -89,7 +89,12 @@ fieldset{
 }
 
 .Warn{
-	color: red
+	color: red;
+}
+.Warn2{
+	color: red;
+	float: right;
+	padding-right: 25px;
 }
 
 .Hidden{

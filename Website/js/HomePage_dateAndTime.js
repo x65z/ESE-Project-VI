@@ -8,4 +8,4 @@ var elemt1 = document.getElementById('info');
 elemt1.innerHTML = today;
 
 var ft = document.getElementById('foot');
-ft.innerHTML = '<p>Copyright &copy ' + year + '</p>';
+ft.innerHTML = '<p>Copyright &copy ' + today.getFullYear() + '</p>';
