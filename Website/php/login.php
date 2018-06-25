@@ -1,6 +1,5 @@
 <?php
 
-
 	$submitted = !empty($_POST);
 
 if ($submitted == 1){
