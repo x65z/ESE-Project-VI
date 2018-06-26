@@ -10,7 +10,13 @@ body {
 #heading{
   width: 100%;
   text-align:center;
+  border:1px solid gray;
 
+
+}
+#banner{
+  margin-left: 10px;
+  margin-top: 5px;
 }
 .jumbotron {
   padding-top: 6rem;
@@ -107,6 +113,8 @@ padding-top: 8px;
   padding-left: 1.9%;
   padding-right: 1%;
   width: 98%;
+  
+
 }
 
 
