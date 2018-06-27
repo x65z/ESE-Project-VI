@@ -1,3 +1,5 @@
+header, section, footer, aside, nav, article, figure {display:block;}
+
 fieldset{
   margin: 1px 1px 1px 1px;
   border-style: solid solid solid solid;

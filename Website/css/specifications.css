@@ -1,3 +1,5 @@
+header, section, footer, aside, nav, article, figure {display:block;}
+
 a:link.menu{
   background-color: black;
   color: white;
