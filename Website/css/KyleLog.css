@@ -1,35 +1,50 @@
-﻿body {font-family: Helvetica, sans-serif;}
+header, section, footer, aside, nav, article, figure {display:block;}
 
-
-p {color: black;
-   font-family: Helvetica, Times, sans-serif;
+body {
+  font-family: Helvetica, sans-serif;
 }
 
-ul {color: black;
-   font-family: Helvetica, Times, sans-serif;
+p {
+  color: black;
+  font-family: Helvetica, Times, sans-serif;
 }
 
-li {color: black;
-   font-family: Helvetica, Times, sans-serif;
+ul {
+  color: black;
+  font-family: Helvetica, Times, sans-serif;
 }
 
+li {
+  color: black;
+  font-family: Helvetica, Times, sans-serif;
+}
 
-h1 {color: black;
-    font-family: Helvetica, sans-serif;
-    }
+h1 {
+  color: black;
+  font-family: Helvetica, sans-serif;
+}
 
-
-h2 {color: black;
-    font-family: Helvetica, sans-serif;
-    }
+h2 {
+  color: black;
+  font-family: Helvetica, sans-serif;
+}
 
 #banner {
-width: 100%;
-color: Black;
-font-family: Helvetica, sans-serif;
-margin: 0px 0px 0px 0px;
-padding: 10px 10px 15px 5px;
-background-color: rgb(0, 128, 185);
+  width: 100%;
+  color: Black;
+  font-family: Helvetica, sans-serif;
+  margin: 0px 0px 0px 0px;
+  padding: 10px 10px 15px 5px;
+  background-color: rgb(0, 128, 185);
+}
+
+#bannerH {
+  width: 100%;
+  color: Black;
+  font-family: Helvetica, sans-serif;
+  margin: 0px 0px 0px 0px;
+  padding: 10px 10px 15px 5px;
+  background-color: rgb(204, 0, 0);
 }
 
 .tab_banner {
@@ -42,6 +57,16 @@ background-color: rgb(0, 128, 185);
   background-color: rgb(0, 128, 185);
 }
 
+.tab_bannerH {
+  width: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  color: darkgrey;
+  margin: 0px -5px 0px 0px;
+  padding: 10px 5px 10px 10px;
+  background-color: rgb(204, 0, 0);
+}
+
 .tab {
   font-weight: bold;
   text-decoration: none;
@@ -49,4 +74,14 @@ background-color: rgb(0, 128, 185);
   margin: 0px -5px 0px 0px;
   padding: 10px 5px 10px 10px;
   background-color: rgb(0, 128, 185);
+
+}
+
+.tabH {
+  font-weight: bold;
+  text-decoration: none;
+  color: darkgrey;
+  margin: 0px -5px 0px 0px;
+  padding: 10px 5px 10px 10px;
+  background-color: rgb(204, 0, 0);
 }

@@ -1,5 +1,6 @@
 <?php
 
+	echo "My first PHP script!";
 	$submitted = !empty($_POST);
 
 if ($submitted == 1){
