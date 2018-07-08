@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
-		<title>Login</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link href="../css/login_style.css" type="text/css" rel="stylesheet" />
 	</head>
-	<body>
-		<form action="../php/login.php" method="post" id="login">
-			<h1>Please log in</h1>
-			<div class="InputBox">
-				<p>Username:
-					<input id="UserN" type="text" name="username" class="Inp"/>
-				</p>
-				<p>Password:
-					<input id="PassW" type="password" name="password" class="Inp"/>
-				</p>
-				<input type="submit" value="Log in" class="Inp"/>
+	<h1>
+		<div class="webBlock">
+			Project Website
+			<div class="webBlockRight">
+				<a href="../html/login.html">Login</a>
+				<label>     </label>
+				<a href="../html/request_access.html">Sign Up</a>
 			</div>
+		</div>
+	</h1>
+	<body>
+		<div class="jumbotron text-center">
+			<form action="../php/authenticate.php" method="post" id="signForm">
+				<fieldset>
+				<legend>Login</legend>
+					<p>Username:<br>
+						<input id="UserN" type="text" name="username" class="inp"/>
+					</p>
+					<label id="UW"></label>
+					<p>Password:<br>
+						<input id="PassW" type="password" name="password" class="inp"/>
+					</p>
+					<label id="PW"></label><br>
+					<label id="PW2"></label><br>
+					<btn>
+						<button type="submit">Submit</button><br>
+					</btn>
+				 </fieldset>
+			</form> 
 			<br>
-			<p><a href="request_access.html">Request Access</a></p>
-		</form>
-		<br>
-		<label id="UNLengthWarn" class="Warn">*User name must be at least 7 characters.</label>
-		<br>
-		<label id="PSWLengthWarn" class="Warn">*Password must be at least 7 characters.</label>
-		<br>
 
-		<script src="../js/login.js"></script>
-		<!--[if It IE 9]>
-			<script src=http://html5shiv.googlecode.com/svn/trunk/html5.js></script>
-		<![endif]-->
+			<br>			
+		</div>
 	</body>
+	<p>Copyright &copy 2018 Zack Henkusens</p>
+	<script src="../js/login.js"></script>
 </html>

@@ -1,19 +1,24 @@
 <?php
   //authenticate.php (modified to use sessions)
 	session_start(); //starts a session and creates a session variable
-  $username = $_POST['username'];
-  $password = $_POST['password'];
 
-if (($username=="TESTING")&&($password=="testing")){
-  $_SESSION['username']=$username;
-  echo "<p>Congragulations! You are logging into the site.</p>";
-  echo "<p>Please click <a href=\"members.php\">here</a> to be taken to our members only page</p>";
-}
+	$name = $_POST["username"]; 
+	$password = $_POST["password"]; 
 
-else{
-  echo "<p>Invalid Username or Password</p>";
-  echo "Click <a href='../html/Login.html'>here</a> to login again";
+	$mysqli = new mysqli('localhost', 'admin', 'password', 'elevator');
+	
+	$result1 = $mysqli->query("SELECT username, password FROM users WHERE username = '".$name."' AND  password = '".$password."'");
 
-}
+	if(mysqli_num_rows($result1) > 0 )
+	{ 
+		$_SESSION["logged_in"] = true; 
+		$_SESSION["naam"] = $name; 
+		echo 'Login successful';
+	}
+	else
+	{
+		echo 'The username or password are incorrect!';
+	}
+
 
 ?>
