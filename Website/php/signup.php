@@ -16,18 +16,17 @@
 	
 	 mysqli_select_db($mysqli,'elevator');
 	
-	$result1 = $mysqli->query("SELECT user, password FROM users WHERE user = '".$name."' AND  password = '".$password."'");
+	$result1 = $mysqli->query("SELECT user FROM users WHERE user = '".$name."'");
 	
 	if(mysqli_num_rows($result1) > 0 )
-	{ 
-		$_SESSION["logged_in"] = true; 
-		$_SESSION["name1"] = $name; 
-		
-		echo 'Login successful';
+	{ 	
+		echo "Username already exists, try again: <a href='../html/Signup.html'>here</a>.";
 	}
 	else
 	{
-		echo 'The username or password are incorrect!';
+		//echo 'Username Valid.';
+		$result1 = $mysqli->query("INSERT INTO users (user, password) VALUES ('".$name."', '".$password."');");
+		echo "Account created, login: <a href='../html/Login.html'>here</a>.";
 		//echo $result1 ? 'true' : 'false';
 	}
 

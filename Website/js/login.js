@@ -1,8 +1,8 @@
-var UNID = document.getElementById("UserN");
-var PassWID = document.getElementById("PassW");
-var UlengthID = document.getElementById("UW");
-var PlengthID = document.getElementById("PW");
-var PlengthID2 = document.getElementById("PW2");
+var UNID = document.getElementById("Username");
+var PassWID = document.getElementById("Password");
+var UlengthID = document.getElementById("Username_Warning");
+var PlengthID = document.getElementById("Password_Warning");
+//var PlengthID2 = document.getElementById("Special_PW_Warning");
 var hasNumber = /\d/;
 
 //alert("howdy ho");
@@ -15,7 +15,7 @@ UNID.addEventListener("keyup", function(evt) {
 	userNameValidate();
 }, false);
 
-function userNameValidate() {			
+function userNameValidate() {
 	//alert(UNID.value.length);
 	if (UNID.value.length < 7 && UNID.value.length > 0){
 		UlengthID.innerHTML = 'Username must be 7 characters long';
@@ -23,7 +23,7 @@ function userNameValidate() {
 		UlengthID.innerHTML = '';
 	}
 }
-function passwordValidate() {			
+function passwordValidate() {
 	//alert(PassWID.value.length);
 	if (PassWID.value.length < 7 && PassWID.value.length > 0){
 		PlengthID.innerHTML = 'Password must be 7 characters long';
@@ -39,7 +39,7 @@ function passwordValidate() {
 	//}
 }
 
-function checkSubmit(){ 
+function checkSubmit(){
 	if (UNID.value.length > 0 && PassWID.value.length > 0 && UlengthID.innerHTML == '' && PlengthID.innerHTML == '' && PlengthID2.innerHTML == ''){
 		//alert("Debug: submit OK")
 	}else{
@@ -49,7 +49,7 @@ function checkSubmit(){
 }
 
 window.onload = function() {
-	var input = document.getElementById("UserN").focus();
+	var input = document.getElementById("Username").focus();
 }
 
-signForm.addEventListener('submit', function(event) {checkSubmit(event);}, false);
+login.addEventListener('submit', function(event) {checkSubmit(event);}, false);
