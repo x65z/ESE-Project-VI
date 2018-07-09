@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <Title>Sign up for our Website</title>
+
+    <link href="../css/login_style.css" type="text/css" rel="stylesheet" />
+
+  </head>
+
+
+
+  <body>
+    <div class="Banner">
+      <h1 id = "Site_Title">Project Website</h1>
+      <p><a href="../html/Login.html" id = "Tab">Login</a></p>
+      <p><a href="../html/Signup.html" id = "Tab">Sign up</a></p>
+
+    </div>
+
+<form action="../php/signup.php" method="post" id="login">
+    <div class="Sign_up">
+    <fieldset>
+          <legend>Sign up</legend>
+          <div class="Entry_Box">
+          <p id="Name">Username:</p>
+            <input type="text" name="Username" class="Input" id="Username"/>
+            <label id="Username_Warning" class="Warning"></label>
+          <p id="Name">Password:</p>
+            <input type="password" name="Password" class="Input" id="Password"/>
+            <label id="Password_Warning" class="Warning"></label><br>
+<!--            <label id="Special_PW_Warning" class="Warning">Password must have at least one upper and one lower case character</label> -->
+          <input type="submit" value="Signup" id="Submit_button" class="input"/>
+        </div>
+      </fieldset>
+    </div>
+  </form>
+
+  <div class="footer">
+<p>Username and password must be at least 7 characters</p>
+</div>
+
+<script src="../js/Login.js"></script>
+
+</body>
+</html>

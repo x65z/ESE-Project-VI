@@ -1,34 +1,126 @@
-header, section, footer, aside, nav, article, figure {display:block;}
+body {
+ font-family: sans-serif;
+ background-color: rgb(12, 71, 106);
+ background-image: url(http://backgroundcheckall.com/wp-content/uploads/2017/12/security-background.png);
+ background-size: 100%;
+ background-repeat: no-repeat;
 
-	body { font-family: sans-serif;}
+}
 
-	p,ul,ol { font-size: 100%;
-		line-height: 20px;
-		letter-spacing: 0px;
-		text-align: justify;
-	}
-
-	p {text-indent: 15px;}
-
-	h1 {font-size: 160%;}
+h1 {
+  font-family: sans-serif;
+  color: darkblue;
+}
 
 
-	body { width: 400px;
-		   padding: 0px 10px 0px 10px;
-		   margin: 0px 10px 0px 10px;
-		   border: 2px solid black;}
+.Banner {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+background: rgba(239, 228, 176, 0.8) ;
+height: 80px;
+width: 100%;
+}
 
-	.Warn{
-		color: red
-	}
-	.Hidden{
-		display: none;
-		visibility: hidden;
-	}
-	.InputBox{
-			width: 300px;
-	}
-	.Inp{
-		float: right;
-		clear: both;
-	}
+#Site_Title {
+padding: 0px 20px 20px 20px;
+float:left;
+}
+
+#Tab {
+padding: 15px 20px 10px 20px;
+color: darkblue;
+font-weight: bold;
+float: right;
+text-decoration: none;
+text-decoration-line: none;
+}
+
+legend {
+color: lightyellow;
+background-color: darkblue;
+border-radius: 5px;
+padding: 5px 25px 5px 25px;
+font-size: 22;
+}
+
+fieldset {
+border-style: solid;
+border-color: darkblue;
+border-radius: 8px;
+background: rgba(239, 228, 176, 0.8) ;
+}
+
+.Sign_up {
+position: center;
+padding-top: 150px;
+margin: auto;
+width:30%;
+border-radius: 10px;
+
+}
+
+
+.Input {
+color: grey;
+float: bottom;
+width: 100%
+}
+
+
+:focus.Details {
+color: black;
+
+}
+
+.Entry_Box {
+text-align: left;
+margin: auto;
+width: 95%;
+}
+
+#Name {
+margin-bottom: 5px;
+font-weight: bold;
+}
+
+.Warning {
+text-align: center;
+font-style: italic;
+font-size: 14;
+color: darkred;
+}
+
+.Hidden {
+display: none;
+visibility: hidden;
+}
+
+
+#Submit_button {
+border-radius: 4px;
+float: right;
+right:0;
+width: 70px;
+margin-left: 13%;
+margin-top: 30px;
+}
+
+:hover#Submit_button {
+color:Darkblue;
+background-color: darkgrey;
+}
+
+:active#Submit_button {
+color: white;
+background-color: black;
+}
+
+.footer {
+font-size: 14;
+padding-top: 5px;
+text-align: center;
+font-style: italic;
+color: lightyellow;
+}
