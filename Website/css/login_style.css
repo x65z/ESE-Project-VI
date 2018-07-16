@@ -23,6 +23,14 @@ height: 80px;
 width: 100%;
 }
 
+#pagetitle{
+position: absolute;
+top: 0;
+padding-top: 23px;
+padding-left: 120px;
+
+}
+
 #Site_Title {
 padding: 0px 20px 20px 20px;
 float:left;
