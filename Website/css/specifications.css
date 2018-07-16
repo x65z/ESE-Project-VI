@@ -1,49 +1,83 @@
 header, section, footer, aside, nav, article, figure {display:block;}
 
-a:link.menu{
-  background-color: black;
-  color: white;
-  text-decoration: none;
+body {
+  font-family: Helvetica, sans-serif;
 }
 
-a:visited.menu{
-  background-color: blue;
-  color: white;
-  text-decoration: none;
-}
-
-a:hover.menu{
-  font-weight: bold;
-  background-color: gray;
-}
-
-a:active.menu{
-  font-weight: bold;
-  color: orange;
-}
-
-input.submit{
-  background-color: blue;
-  color: white;
-}
-
-input.submit:hover{
-  background-color: white;
-  color: blue;
-}
-
-input.submit:active{
-  color: orange;
-}
-
-input.text, textarea.text{
-  color: gray;
-}
-
-input.text:focus, textarea.text:focus{
+p {
   color: black;
+  font-family: Helvetica, Times, sans-serif;
 }
 
-li.h_menu{
-  display: inline;
+ul {
+  color: black;
+  font-family: Helvetica, Times, sans-serif;
+}
+
+li {
+  color: black;
+  font-family: Helvetica, Times, sans-serif;
+}
+
+h1 {
+  color: black;
+  font-family: Helvetica, sans-serif;
+}
+
+h2 {
+  color: black;
+  font-family: Helvetica, sans-serif;
+}
+
+
+.Banner {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+background: grey ;
+height: 100px;
+width: 100%;
+}
+
+#pagetitle{
+position: absolute;
+top: 0;
+padding-top: 23px;
+padding-left: 10px;
+
+}
+
+#Site_Title {
+padding: 0px 20px 20px 20px;
+float:left;
+}
+
+.Tab_Banner {
+margin-top: 25px;
+
+}
+
+.Tab {
+  padding: 10px 10px 10px 10px;
+  color: Black;
+  font-weight: bold;
+  float: left;
+  text-decoration: none;
+  text-decoration-line: none;
+}
+
+
+
+#Tab {
+padding: 15px 20px 10px 20px;
+color: Black;
+font-weight: bold;
+float: right;
+text-decoration: none;
+text-decoration-line: none;
+}
+
+#image {
+margin-top: 100px;
 }
