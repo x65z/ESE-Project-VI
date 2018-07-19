@@ -36,7 +36,7 @@ top: 0;
 left: 0;
 right: 0;
 background: grey ;
-height: 100px;
+height: 110px;
 width: 100%;
 }
 
@@ -54,7 +54,8 @@ float:left;
 }
 
 .Tab_Banner {
-margin-top: 25px;
+margin-top: 35px;
+
 
 }
 
@@ -65,6 +66,10 @@ margin-top: 25px;
   float: left;
   text-decoration: none;
   text-decoration-line: none;
+}
+
+.Tab:Hover {
+color: lightgrey;
 }
 
 
@@ -79,5 +84,5 @@ text-decoration-line: none;
 }
 
 #image {
-margin-top: 100px;
+margin-top: 0px;
 }
