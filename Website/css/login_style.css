@@ -18,9 +18,17 @@ position: absolute;
 top: 0;
 left: 0;
 right: 0;
-background: rgba(239, 228, 176, 0.8) ;
+background: rgba(228, 175, 97, 0.8) ;
 height: 80px;
 width: 100%;
+}
+
+#pagetitle{
+position: absolute;
+top: 0;
+padding-top: 23px;
+padding-left: 20px;
+
 }
 
 #Site_Title {
@@ -49,7 +57,7 @@ fieldset {
 border-style: solid;
 border-color: darkblue;
 border-radius: 8px;
-background: rgba(239, 228, 176, 0.8) ;
+background: rgba(228, 175, 97, 0.8) ;
 }
 
 .Sign_up {
