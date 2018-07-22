@@ -446,22 +446,32 @@ int DatabaseToBus(int num_msgs)
 		// Read 'num' messages on the CAN bus
 		while(i < num_msgs)
 		{
+			printf("\nI'm in the sending switch statment\n");
+			sleep(1);
 			switch (Request)
 			{
 				case 0:
 					pcanTx(ID_SC_TO_EC, 0x01); //should disable the elevator (Emergency Stop)
+					printf("\nI just sent to CAN bus\n");
+					sleep(1);
 					break;
 
 				case 1:
 					pcanTx(ID_SC_TO_EC, GO_TO_FLOOR1); //Send request to go to floor 1
+					printf("\nI just sent to CAN bus\n");
+					sleep(1);
 					break;
 
 				case 2:
 					pcanTx(ID_SC_TO_EC, GO_TO_FLOOR2); //Send request to go to floor 2
+					printf("\nI just sent to CAN bus\n");
+					sleep(1);
 					break;
 
 				case 3:
 					pcanTx(ID_SC_TO_EC, GO_TO_FLOOR3); //Send request to go to floor 3
+					printf("\nI just sent to CAN bus\n");
+					sleep(1);
 					break;
 
 				default:
