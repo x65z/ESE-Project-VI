@@ -276,12 +276,10 @@ int BusToDatabase(int num_msgs)
 		printf("\nCheck 1\n");
 		while((status = CAN_Read(h2, &Rxmsg)) == PCAN_RECEIVE_QUEUE_EMPTY)
 		{
-			printf("\nCheck 2\n");
 			sleep(1);
 		}
 		if(status != PCAN_NO_ERROR)
 		{						// If there is an error, display the code
-			printf("\nCheck 3\n");
 			printf("Error 0x%x\n", (int)status);
 			//break;
 		}
@@ -290,6 +288,8 @@ int BusToDatabase(int num_msgs)
 		(int)Rxmsg.ID,        //Saves Sender ID
 		(int)Rxmsg.LEN,				//Saves message length
 		(int)Rxmsg.DATA[0]);	//Saves the contents of the message
+
+		printf("\nCheck 2\n");
 
 		printf("\n%d    %d    %d\n", Rxmsg.ID, Rxmsg.LEN, Rxmsg.DATA[0]);
 
