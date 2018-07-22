@@ -273,7 +273,6 @@ int BusToDatabase(int num_msgs)
 	// Read 'num' messages on the CAN bus
 	while(i < num_msgs)
 	{
-		printf("\nCheck 1\n");
 		while((status = CAN_Read(h2, &Rxmsg)) == PCAN_RECEIVE_QUEUE_EMPTY)
 		{
 			sleep(1);
@@ -294,12 +293,6 @@ int BusToDatabase(int num_msgs)
 		(int)Rxmsg.LEN,				//Saves message length
 		(int)Rxmsg.DATA[0]);	//Saves the contents of the message
 
-		printf("\nCheck 2\n");
-
-		printf("\n%d    %d    %d\n", Rxmsg.ID, Rxmsg.LEN, Rxmsg.DATA[0]);
-
-	//	printf("\n%d    %d    %d\n", (int)Rxmsg.ID, (int)Rxmsg.LEN, (int)Rxmsg.DATA[0]);
-
 		switch (Rxmsg.ID)  //Evaluate based on sender ID
 		{
 			case ID_EC_TO_ALL:    //ID 101 (Elevator Controller)
@@ -312,8 +305,6 @@ int BusToDatabase(int num_msgs)
 
 					case 0x01:
 						printf("Elevator at floor 1\n");
-
-						sleep(1);
 		//			db_updateLogger(101, 1);
 						db_setCurrent(1); //Update the database that the current floor is 1
 						break;
@@ -321,41 +312,35 @@ int BusToDatabase(int num_msgs)
 					case 0x02:
 						printf("Elevator at floor 2\n");
 		//			db_updateLogger(101, 2);
-						sleep(1);
 						db_setCurrent(2); //Update the database that the current floor is 2
 						break;
 
 					case 0x03:
 						printf("Elevator at floor 3\n");
 		//			db_updateLogger(101, 3);
-						sleep(1);
 						db_setCurrent(3); //Update the database that the current floor is 3
 						break;
 
 					case 0x04:
 						printf("Elevator Moving\n");
 		//			db_updateLogger(101, 0);
-						sleep(1);
 						break; //no database update needed
 
 					case 0x05:
 						printf("Elevator at floor 1\n");
 		//			db_updateLogger(101, 1);
-						sleep(1);
 						db_setCurrent(1); //Update the database that the current floor is 1
 						break;
 
 					case 0x06:
 						printf("Elevator at floor 2\n");
 		//			db_updateLogger(101, 2);
-						sleep(1);
 						db_setCurrent(2); //Update the database that the current floor is 2
 						break;
 
 					case 0x07:
 						printf("Elevator at floor 3\n");
 		//			db_updateLogger(101, 3);
-						sleep(1);
 						db_setCurrent(3); //Update the database that the current floor is 3
 						break;
 
@@ -426,7 +411,7 @@ int BusToDatabase(int num_msgs)
 	CAN_Close(h2);
 
 	printf("\nEnd Rx\n");
-	sleep(10);
+
 	return ((int)Rxmsg.DATA[0]); // Return the message contents received
 }
 
@@ -436,19 +421,11 @@ int BusToDatabase(int num_msgs)
 
 int DatabaseToBus(int num_msgs)
 {
-	printf("\nI've gotten into DatabaseToBus!\n");
 	int i = 0;
 	int Request = db_getRequested(); //get the value in the requested floor column of the database
 
-	printf("\nDTB successfully got through db_getRequested, value was %d, last request was %d\n", Request, LastRequest);
-
-	sleep(10);
-
 	if (Request != LastRequest) //check to see if the requested floor changed since last time
 	{
-		printf("\nRequest did not equal LastRequest, so I'm going to send this to the bus\n");
-
-		sleep(5);
 		// Open a CAN channel
 		h2 = LINUX_CAN_Open("/dev/pcanusb32", O_RDWR);
 
@@ -492,21 +469,12 @@ int DatabaseToBus(int num_msgs)
 		i++;
 		}
 
-
-printf("\nI'm done, now I will change LastRequest to equal Request, LastRequest was %d, Request was %d\n", LastRequest, Request);
-
 	LastRequest = Request;
-printf("\nSuccess, now LastRequest is %d and Request is %d\n", LastRequest, Request);
-
 
 	// Close CAN 2.0 channel and exit
 	CAN_Close(h2);
-	printf("\nClosed CAN connection\n");
-	sleep(10);
 
 	}
-	printf("\nExiting DTB\n");
-	sleep(10);
 	//printf("\nEnd Rx\n");
 	return (Request);						// Return the last value received
 
