@@ -145,17 +145,17 @@ int RelayMessage(int num_msgs){
 
 					case 0x01:
 						printf("Elevator at floor 1\n");
-						db_setFloorNum(1);
+					//	db_setFloorNum(1);
 						break;
 
 					case 0x02:
 						printf("Elevator at floor 2\n");
-						db_setFloorNum(2);
+					//	db_setFloorNum(2);
 						break;
 
 					case 0x03:
 						printf("Elevator at floor 3\n");
-						db_setFloorNum(3);
+					//	db_setFloorNum(3);
 						break;
 
 					case 0x04:
@@ -164,17 +164,17 @@ int RelayMessage(int num_msgs){
 
 					case 0x05:
 						printf("Elevator at floor 1\n");
-						db_setFloorNum(1);
+					//	db_setFloorNum(1);
 						break;
 
 					case 0x06:
 						printf("Elevator at floor 2\n");
-						db_setFloorNum(2);
+					//	db_setFloorNum(2);
 						break;
 
 					case 0x07:
 						printf("Elevator at floor 3\n");
-						db_setFloorNum(3);
+					//	db_setFloorNum(3);
 						break;
 
 					default:
