@@ -132,9 +132,9 @@ int db_setCurrent(int floorNum) {
 	pstmt->setInt(1, floorNum);
 	pstmt->executeUpdate();
 
-  executeQuery("SELECT * FROM status");
+  //executeQuery("SELECT * FROM status");
 
-  sleep(10);
+//  sleep(10);
 
 	// Clean up pointers
 	delete res;
@@ -172,9 +172,9 @@ int db_setRequested(int floorNum) {
 	pstmt->executeUpdate();
 
 
-  executeQuery("SELECT * FROM status");
+  //executeQuery("SELECT * FROM status");
 
-  sleep(10);
+  //sleep(10);
 
 	// Clean up pointers
 	delete res;
@@ -183,7 +183,7 @@ int db_setRequested(int floorNum) {
 	delete con;
 }
 
-
+/*
 int db_updateLogger(int NodeID, int Message) {
 	sql::Driver *driver; 				// Create a pointer to a MySQL driver object
 	sql::Connection *con; 				// Create a pointer to a database connection object
@@ -216,3 +216,4 @@ int db_updateLogger(int NodeID, int Message) {
 	delete stmt;
 	delete con;
 }
+*/
