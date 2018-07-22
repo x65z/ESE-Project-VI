@@ -293,7 +293,7 @@ int BusToDatabase(int num_msgs)
 
 		printf("\n%d    %d    %d\n", Rxmsg.ID, Rxmsg.LEN, Rxmsg.DATA[0]);
 
-		printf("\n%d    %d    %d\n", (int)Rxmsg.ID, (int)Rxmsg.LEN, (int)Rxmsg.DATA[0]);
+	//	printf("\n%d    %d    %d\n", (int)Rxmsg.ID, (int)Rxmsg.LEN, (int)Rxmsg.DATA[0]);
 
 		switch (Rxmsg.ID)  //Evaluate based on sender ID
 		{
