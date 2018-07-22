@@ -253,7 +253,7 @@ int RelayMessage(int num_msgs){
 
 int BusToDatabase(int num_msgs)
 {
-		int i = 0;
+	int i = 0;
 
 	// Open a CAN channel
 	h2 = LINUX_CAN_Open("/dev/pcanusb32", O_RDWR);
@@ -268,17 +268,20 @@ int BusToDatabase(int num_msgs)
 	system("@cls||clear");
 
 	// receive CAN message  - CODE adapted from PCAN BASIC C++ examples pcanread.cpp
-	printf("\nReady to receive message(s) over CAN bus\n");
+	printf("\nReady to receive message(s) from CAN bus\n");
 
 	// Read 'num' messages on the CAN bus
 	while(i < num_msgs)
 	{
+		printf("\nCheck 1\n");
 		while((status = CAN_Read(h2, &Rxmsg)) == PCAN_RECEIVE_QUEUE_EMPTY)
 		{
+			printf("\nCheck 2\n");
 			sleep(1);
 		}
 		if(status != PCAN_NO_ERROR)
 		{						// If there is an error, display the code
+			printf("\nCheck 3\n");
 			printf("Error 0x%x\n", (int)status);
 			//break;
 		}
@@ -300,6 +303,8 @@ int BusToDatabase(int num_msgs)
 
 				case 0x01:
 					printf("Elevator at floor 1\n");
+
+					sleep(1);
 		//			db_updateLogger(101, 1);
 					db_setCurrent(1); //Update the database that the current floor is 1
 					break;
@@ -307,35 +312,41 @@ int BusToDatabase(int num_msgs)
 				case 0x02:
 					printf("Elevator at floor 2\n");
 		//			db_updateLogger(101, 2);
+		sleep(1);
 					db_setCurrent(2); //Update the database that the current floor is 2
 					break;
 
 				case 0x03:
 					printf("Elevator at floor 3\n");
 		//			db_updateLogger(101, 3);
+		sleep(1);
 					db_setCurrent(3); //Update the database that the current floor is 3
 					break;
 
 				case 0x04:
 					printf("Elevator Moving\n");
 		//			db_updateLogger(101, 0);
+		sleep(1);
 					break; //no database update needed
 
 				case 0x05:
 					printf("Elevator at floor 1\n");
 		//			db_updateLogger(101, 1);
+		sleep(1);
 					db_setCurrent(1); //Update the database that the current floor is 1
 					break;
 
 				case 0x06:
 					printf("Elevator at floor 2\n");
 		//			db_updateLogger(101, 2);
+		sleep(1);
 					db_setCurrent(2); //Update the database that the current floor is 2
 					break;
 
 				case 0x07:
 					printf("Elevator at floor 3\n");
 		//			db_updateLogger(101, 3);
+		sleep(1);
 					db_setCurrent(3); //Update the database that the current floor is 3
 					break;
 
@@ -402,7 +413,9 @@ int BusToDatabase(int num_msgs)
 
 	// Close CAN 2.0 channel and exit
 	CAN_Close(h2);
-	//printf("\nEnd Rx\n");
+
+	printf("\nEnd Rx\n");
+	sleep(10;)
 	return ((int)Rxmsg.DATA[0]); // Return the message contents received
 }
 
@@ -430,7 +443,7 @@ int DatabaseToBus(int num_msgs)
 		system("@cls||clear");
 
 		// receive CAN message  - CODE adapted from PCAN BASIC C++ examples pcanread.cpp
-		printf("\nReady to send message(s) over CAN bus\n");
+		printf("\nReady to send message(s) to CAN bus\n");
 
 		// Read 'num' messages on the CAN bus
 		while(i < num_msgs)
