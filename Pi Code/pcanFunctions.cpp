@@ -436,8 +436,13 @@ int BusToDatabase(int num_msgs)
 
 int DatabaseToBus(int num_msgs)
 {
+	printf("\nI've gotten into DatabaseToBus!\n");
 	int i = 0;
 	int Request = db_getRequested(); //get the value in the requested floor column of the database
+
+	printf("\nDTB successfully got through db_getRequested, value was %d, last request was %d\n", Request, LastRequest);
+
+	sleep(10);
 
 	if (Request != LastRequest) //check to see if the requested floor changed since last time
 	{
