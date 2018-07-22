@@ -446,8 +446,6 @@ int DatabaseToBus(int num_msgs)
 		// Read 'num' messages on the CAN bus
 		while(i < num_msgs)
 		{
-			printf("\nI'm in the sending switch statment\n");
-			sleep(1);
 			switch (Request)
 			{
 				case 0:
