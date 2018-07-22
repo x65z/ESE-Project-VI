@@ -79,7 +79,7 @@ int db_setFloorNum(int floorNum) {
 
 	// Create a connection
 	driver = get_driver_instance();
-	con = driver->connect("tcp://127.0.0.1:3306", "root", "");
+	con = driver->connect("tcp://127.0.0.1:3306", "ESE", "ese");
 	con->setSchema("joinExample");
 
 	// Query database (possibly not necessary)
