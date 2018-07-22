@@ -291,6 +291,8 @@ int BusToDatabase(int num_msgs)
 		(int)Rxmsg.LEN,				//Saves message length
 		(int)Rxmsg.DATA[0]);	//Saves the contents of the message
 
+		printf("\n%d    %d    %d\n", Rxmsg.ID, Rxmsg.LEN, Rxmsg.DATA[0]);
+
 		switch (Rxmsg.ID)  //Evaluate based on sender ID
 		{
 			case ID_EC_TO_ALL:    //ID 101 (Elevator Controller)
@@ -385,7 +387,7 @@ int BusToDatabase(int num_msgs)
 						sleep(3);
 						break;
 				}
-				
+
 				break;
 //Because the floor can only request the elevator comes to it, don't need to evaluate message contents
 			case ID_F1_TO_SC:    //ID 201 (Floor 1)
