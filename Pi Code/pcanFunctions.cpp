@@ -422,7 +422,7 @@ int BusToDatabase(int num_msgs)
 int DatabaseToBus(int num_msgs)
 {
 	int i = 0;
-	int Request = db_getRequested(); //get the value in the requested floor column of the database
+	volatile int Request = db_getRequested(); //get the value in the requested floor column of the database
 
 	if (Request != LastRequest) //check to see if the requested floor changed since last time
 	{
