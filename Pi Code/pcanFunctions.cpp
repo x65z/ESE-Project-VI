@@ -471,12 +471,13 @@ int DatabaseToBus(int num_msgs)
 		i++;
 		}
 
-	LastRequest = Request;
+
 
 	// Close CAN 2.0 channel and exit
 	CAN_Close(h2);
 
 	}
+	LastRequest = Request;
 	//printf("\nEnd Rx\n");
 	return (Request);						// Return the last value received
 
