@@ -20,13 +20,13 @@ int db_getFloorNum() {
 
 	// Create a connection
 	driver = get_driver_instance();
-	con = driver->connect("tcp://127.0.0.1:3306", "root", "");
+	con = driver->connect("tcp://127.0.0.1:3306", "ESE", "ese");
 	con->setSchema("joinExample");
 
 	// Query database
 	// *****************************
 	stmt = con->createStatement();
-	res = stmt->executeQuery("SELECT currentFloor FROM currentStatus WHERE nodeID = 1");	// message query
+	res = stmt->executeQuery("SELECT currentFloor FROM currentStatus WHERE id = 1");	// message query
 	while(res->next()){
 		floorNum = res->getInt("currentFloor");
 	}
@@ -56,7 +56,7 @@ int db_getRequested() {
 	// Query database
 	// *****************************
 	stmt = con->createStatement();
-	res = stmt->executeQuery("SELECT requestedFloor FROM status WHERE ID = 1");	// message query
+	res = stmt->executeQuery("SELECT requestedFloor FROM status WHERE id = 1");	// message query
 	while(res->next()){
 		floorNum = res->getInt("requestedFloor");
 	}
@@ -85,14 +85,14 @@ int db_setFloorNum(int floorNum) {
 	// Query database (possibly not necessary)
 	// *****************************
 	stmt = con->createStatement();
-	res = stmt->executeQuery("SELECT currentFloor FROM currentStatus WHERE nodeID = 1");	// message query
+	res = stmt->executeQuery("SELECT currentFloor FROM currentStatus WHERE id = 1");	// message query
 	while(res->next()){
 		res->getInt("currentFloor");
 	}
 
 	// Update database
 	// *****************************
-	pstmt = con->prepareStatement("UPDATE currentStatus SET currentFloor = ? WHERE nodeID = 1");
+	pstmt = con->prepareStatement("UPDATE currentStatus SET currentFloor = ? WHERE id = 1");
 	pstmt->setInt(1, floorNum);
 	pstmt->executeUpdate();
 
@@ -121,14 +121,14 @@ int db_setCurrent(int floorNum) {
 	// Query database (possibly not necessary)
 	// *****************************
 	stmt = con->createStatement();
-	res = stmt->executeQuery("SELECT currentFloor FROM status WHERE ID = 1");	// message query
+	res = stmt->executeQuery("SELECT currentFloor FROM status WHERE id = 1");	// message query
 	while(res->next()){
 		res->getInt("currentFloor");
 	}
 
 	// Update database
 	// *****************************
-	pstmt = con->prepareStatement("UPDATE status SET currentFloor = ? WHERE ID = 1");
+	pstmt = con->prepareStatement("UPDATE status SET currentFloor = ? WHERE id = 1");
 	pstmt->setInt(1, floorNum);
 	pstmt->executeUpdate();
 
@@ -160,14 +160,14 @@ int db_setRequested(int floorNum) {
 	// Query database (possibly not necessary)
 	// *****************************
 	stmt = con->createStatement();
-	res = stmt->executeQuery("SELECT requestedFloor FROM status WHERE ID = 1");	// message query
+	res = stmt->executeQuery("SELECT requestedFloor FROM status WHERE id = 1");	// message query
 	while(res->next()){
 		res->getInt("requestedFloor");
 	}
 
 	// Update database
 	// *****************************
-	pstmt = con->prepareStatement("UPDATE status SET requestedFloor = ? WHERE ID = 1");
+	pstmt = con->prepareStatement("UPDATE status SET requestedFloor = ? WHERE id = 1");
 	pstmt->setInt(1, floorNum);
 	pstmt->executeUpdate();
 
@@ -199,14 +199,14 @@ int db_updateLogger(int NodeID, int Message) {
 	// Query database (possibly not necessary)
 	// *****************************
 	stmt = con->createStatement();
-	res = stmt->executeQuery("SELECT currentFloor FROM currentStatus WHERE nodeID = 1");	// message query
+	res = stmt->executeQuery("SELECT currentFloor FROM currentStatus WHERE id = 1");	// message query
 	while(res->next()){
 		res->getInt("currentFloor");
 	}
 
 	// Update database
 	// *****************************
-	pstmt = con->prepareStatement("UPDATE currentStatus SET currentFloor = ? WHERE nodeID = 1");
+	pstmt = con->prepareStatement("UPDATE currentStatus SET currentFloor = ? WHERE id = 1");
 	pstmt->setInt(1, floorNum);
 	pstmt->executeUpdate();
 
