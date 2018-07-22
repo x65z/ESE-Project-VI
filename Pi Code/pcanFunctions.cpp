@@ -424,6 +424,8 @@ int DatabaseToBus(int num_msgs)
 	int i = 0;
 	volatile int Request = db_getRequested(); //get the value in the requested floor column of the database
 
+	printf("\nRequest = %d LastRequest = %d\n", Request, LastRequest);
+
 	if (Request != LastRequest) //check to see if the requested floor changed since last time
 	{
 		// Open a CAN channel

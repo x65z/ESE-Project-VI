@@ -57,6 +57,7 @@ int main() {
 					//sleep(1); //might not need
 
 					BusToDatabase(1);
+					sleep(1);
 					DatabaseToBus(1);
 																				// poll Bus to check for requests
 				}
