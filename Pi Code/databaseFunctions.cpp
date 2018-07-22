@@ -50,15 +50,15 @@ int db_getRequested() {
 
 	// Create a connection
 	driver = get_driver_instance();
-	con = driver->connect("tcp://127.0.0.1:3306", "root", "");
-	con->setSchema("joinExample");
+	con = driver->connect("tcp://127.0.0.1:3306", "ESE", "ese");
+	con->setSchema("project");
 
 	// Query database
 	// *****************************
 	stmt = con->createStatement();
-	res = stmt->executeQuery("SELECT currentFloor FROM currentStatus WHERE nodeID = 1");	// message query
+	res = stmt->executeQuery("SELECT requestedFloor FROM status WHERE ID = 1");	// message query
 	while(res->next()){
-		floorNum = res->getInt("currentFloor");
+		floorNum = res->getInt("requestedFloor");
 	}
 
 	// Clean up pointers

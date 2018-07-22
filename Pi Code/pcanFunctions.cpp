@@ -295,47 +295,47 @@ int BusToDatabase(int num_msgs)
 			{
 				case 0x00:
 					printf("Elevator Moving\n");
-					db_updateLogger(101, 0);
+		//			db_updateLogger(101, 0);
 					break; //no database update needed
 
 				case 0x01:
 					printf("Elevator at floor 1\n");
-					db_updateLogger(101, 1);
+		//			db_updateLogger(101, 1);
 					db_setCurrent(1); //Update the database that the current floor is 1
 					break;
 
 				case 0x02:
 					printf("Elevator at floor 2\n");
-					db_updateLogger(101, 2);
+		//			db_updateLogger(101, 2);
 					db_setCurrent(2); //Update the database that the current floor is 2
 					break;
 
 				case 0x03:
 					printf("Elevator at floor 3\n");
-					db_updateLogger(101, 3);
+		//			db_updateLogger(101, 3);
 					db_setCurrent(3); //Update the database that the current floor is 3
 					break;
 
 				case 0x04:
 					printf("Elevator Moving\n");
-					db_updateLogger(101, 0);
+		//			db_updateLogger(101, 0);
 					break; //no database update needed
 
 				case 0x05:
 					printf("Elevator at floor 1\n");
-					db_updateLogger(101, 1);
+		//			db_updateLogger(101, 1);
 					db_setCurrent(1); //Update the database that the current floor is 1
 					break;
 
 				case 0x06:
 					printf("Elevator at floor 2\n");
-					db_updateLogger(101, 2);
+		//			db_updateLogger(101, 2);
 					db_setCurrent(2); //Update the database that the current floor is 2
 					break;
 
 				case 0x07:
 					printf("Elevator at floor 3\n");
-					db_updateLogger(101, 3);
+		//			db_updateLogger(101, 3);
 					db_setCurrent(3); //Update the database that the current floor is 3
 					break;
 
@@ -350,22 +350,22 @@ int BusToDatabase(int num_msgs)
 			switch (Rxmsg.DATA[0]) //evaluate message contents to see which floor was requested
 			{
 				case 0x00:
-					db_updateLogger(200, 0);
+	//				db_updateLogger(200, 0);
 					db_setRequested(0); //set requested floor to 0 (should disable the elevator (Emergency Stop))
 					break;
 
 				case GO_TO_FLOOR1:
-					db_updateLogger(200, 1);
+	//				db_updateLogger(200, 1);
 					db_setRequested(1); //set requested floor to 1
 					break;
 
 				case GO_TO_FLOOR2:
-					db_updateLogger(200, 2);
+	//				db_updateLogger(200, 2);
 					db_setRequested(2); //set requested floor to 1
 					break;
 
 				case GO_TO_FLOOR3:
-					db_updateLogger(200, 3);
+	//				db_updateLogger(200, 3);
 					db_setRequested(3); //set requested floor to 1
 					break;
 
@@ -377,17 +377,17 @@ int BusToDatabase(int num_msgs)
 			break;
 //Because the floor can only request the elevator comes to it, don't need to evaluate message contents
 			case ID_F1_TO_SC:    //ID 201 (Floor 1)
-				db_updateLogger(201, 1);
+	//			db_updateLogger(201, 1);
 				db_setRequested(1); //set requested floor to 1
 				break;
 //Because the floor can only request the elevator comes to it, don't need to evaluate message contents
 			case ID_F2_TO_SC:    //ID 202 (Floor 2)
-				db_updateLogger(202, 2);
+	//			db_updateLogger(202, 2);
 				db_setRequested(2); //set requested floor to 1
 				break;
 //Because the floor can only request the elevator comes to it, don't need to evaluate message contents
 			case ID_F3_TO_SC:    //ID 203 (Floor 3)
-				db_updateLogger(203, 3);
+	//			db_updateLogger(203, 3);
 				db_setRequested(3); //set requested floor to 1
 				break;
 
