@@ -426,8 +426,8 @@ int DatabaseToBus(int num_msgs)
 
 	printf("\nRequest = %d LastRequest = %d\n", Request, LastRequest);
 
-	if (Request != LastRequest) //check to see if the requested floor changed since last time
-	{
+	//if (Request != LastRequest) //check to see if the requested floor changed since last time
+	//{
 		// Open a CAN channel
 		h2 = LINUX_CAN_Open("/dev/pcanusb32", O_RDWR);
 
@@ -476,7 +476,7 @@ int DatabaseToBus(int num_msgs)
 	// Close CAN 2.0 channel and exit
 	CAN_Close(h2);
 
-	}
+//	}
 	LastRequest = Request;
 	//printf("\nEnd Rx\n");
 	return (Request);						// Return the last value received
