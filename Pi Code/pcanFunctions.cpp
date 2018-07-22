@@ -284,6 +284,11 @@ int BusToDatabase(int num_msgs)
 			//break;
 		}
 
+		if(Rxmsg.ID != 0x01 && Rxmsg.LEN != 0x04) // Ignore some bullshit that shouldn't actually be there in the first place
+		{
+
+
+
 		printf("  - R ID:%4x LEN:%1x DATA:%02x \n",	// Display the CAN message
 		(int)Rxmsg.ID,        //Saves Sender ID
 		(int)Rxmsg.LEN,				//Saves message length
@@ -412,9 +417,10 @@ int BusToDatabase(int num_msgs)
 				sleep(3);
 				break;
 			}
-	i++; //counter incase you wanted to loop this function multiple times
-	} //end of while loop where i is under the passed in value
 
+		i++; //counter incase you wanted to loop this function multiple times
+		} //end of while loop where i is under the passed in value
+	}
 
 	// Close CAN 2.0 channel and exit
 	CAN_Close(h2);
