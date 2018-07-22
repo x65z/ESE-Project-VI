@@ -415,7 +415,7 @@ int BusToDatabase(int num_msgs)
 	CAN_Close(h2);
 
 	printf("\nEnd Rx\n");
-	sleep(10;)
+	sleep(10);
 	return ((int)Rxmsg.DATA[0]); // Return the message contents received
 }
 
