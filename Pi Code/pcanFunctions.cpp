@@ -501,9 +501,13 @@ printf("\nSuccess, now LastRequest is %d and Request is %d\n", LastRequest, Requ
 
 	// Close CAN 2.0 channel and exit
 	CAN_Close(h2);
-
 	printf("\nClosed CAN connection\n");
+	sleep(10);
+
+	}
+	printf("\nExiting DTB\n");
 	sleep(10);
 	//printf("\nEnd Rx\n");
 	return (Request);						// Return the last value received
+
 }
