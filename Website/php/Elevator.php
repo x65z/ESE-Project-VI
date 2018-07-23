@@ -5,54 +5,43 @@
 	//$name = $_POST["Username"]; 
 	//$password = $_POST["Password"]; 
 	
+	$out = 0;
+	
+	//input processing starts
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //something posted
-	echo "button pressed";
-	echo "<br/>";
-    if (isset($_POST['Floor1'])) {
-        echo "Floor1";
-    } else if (isset($_POST['Floor2'])) {
-		echo "Floor2";
-	} else if (isset($_POST['Floor3'])) {
-		echo "Floor3";
-	} else {
-        //assume halt
-		echo "Halt";
-    }
-}
-/*
+		//something posted
+		echo "button pressed";
+		echo "<br/>";
+		if (isset($_POST['Floor1'])) {
+			echo "Floor1";
+			$out = 1;
+		} else if (isset($_POST['Floor2'])) {
+			echo "Floor2";
+			$out = 2;
+		} else if (isset($_POST['Floor3'])) {
+			echo "Floor3";
+			$out = 3;
+		} else {
+			//assume halt
+			echo "Halt";
+		}
+	}
+	
+	//connection to database starts
 	$db = new PDO(
 		'mysql:host=127.0.0.1;dbname=elevator', //Data Source Name
 		'root',					  //Username
 		''					  //Password
 	);
 
-		$query = 'SELECT user, password FROM users WHERE user = :user AND  password = :password'; // Formatted Query, parameters identified by ':'
+		//$query = 'SELECT elevatorNetwork, password FROM users WHERE user = :user AND  password = :password'; // Formatted Query, parameters identified by ':'
+		$query = 'INSERT INTO elevatorNetwork (requestedFloor) VALUES (:out);';
 		$statement = $db->prepare($query);	
 		$params = [
-		'user' => $name,    // Array containing the data
-		'password' => $password
+		'out' => $out    // Array containing the data
 	];
-	$result = $statement->execute($params); // execute is the method for inserting the formatted array into the database
-	$count = $statement->rowCount();
-	//$mysqli = new mysqli('localhost', 'admin', 'password', 'elevator');
+	$result = $statement->execute($params); // execute is the method for inserting the formatted array into the database	
 	
-	 //mysqli_select_db($mysqli,'elevator');
-	
-	//$result1 = $mysqli->query("SELECT user, password FROM users WHERE user = '".$name."' AND  password = '".$password."'");
-	
-	if($count > 0)
-	{ 
-		$_SESSION["logged_in"] = true; 
-		$_SESSION["name1"] = $name; 
-		
-		echo 'Login successful';
-	}
-	else
-	{
-		echo 'The username or password are incorrect!';
-		//echo $result1 ? 'true' : 'false';
-	}
+	echo "<br/>Wrote to database";
 
-*/
 ?>
