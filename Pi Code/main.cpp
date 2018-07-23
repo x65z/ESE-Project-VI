@@ -54,7 +54,7 @@ int main() {
 
 				while(1)
 				{
-					BusToDatabase(1);
+					BusToDatabase(2);
 					DatabaseToBus(1);
 																				// poll Bus to check for requests
 				}
