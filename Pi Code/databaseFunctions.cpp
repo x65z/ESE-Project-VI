@@ -101,6 +101,8 @@ int db_setFloorNum(int floorNum) {
 	delete pstmt;
 	delete stmt;
 	delete con;
+
+  return(0);
 }
 
 
@@ -141,6 +143,8 @@ int db_setCurrent(int floorNum) {
 	delete pstmt;
 	delete stmt;
 	delete con;
+
+  return(0);
 }
 
 
@@ -181,6 +185,8 @@ int db_setRequested(int floorNum) {
 	delete pstmt;
 	delete stmt;
 	delete con;
+
+  return(0);
 }
 
 
@@ -291,9 +297,14 @@ int db_updateLogger(int NodeID, int Message) {
       break;
   }
 
+printf("\nJust before clearing pointers\n");
 	// Clean up pointers
 	delete res;
 	delete pstmt;
 	delete stmt;
 	delete con;
+
+  printf("\nJust cleaned pointers\n");
+
+  return(0);
 }
