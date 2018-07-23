@@ -30,6 +30,8 @@ int main() {
 	int floorNumber = 1, prev_floorNumber = 1;
 	TPCANMsg Message;
 
+	db_clear();
+
 	while(1) {
 		system("@cls||clear");
 		choice = menu();

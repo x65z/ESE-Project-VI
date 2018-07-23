@@ -11,6 +11,34 @@
 
 using namespace std;
 
+int db_clear() {
+
+  sql::Driver *driver; 				// Create a pointer to a MySQL driver object
+	sql::Connection *con; 				// Create a pointer to a database connection object
+	sql::PreparedStatement *pstmt; 		// Create a pointer to a prepared statement
+
+	// Create a connection
+	driver = get_driver_instance();
+	con = driver->connect("tcp://127.0.0.1:3306", "ESE", "ese");
+	con->setSchema("project");
+
+	// Update database
+	// *****************************
+	pstmt = con->prepareStatement("DELETE FROM debugLog");
+	pstmt->executeUpdate();
+
+	// Clean up pointers
+	delete pstmt;
+	delete con;
+
+  return(0);
+
+
+}
+
+
+
+
 int db_getFloorNum() {
 	sql::Driver *driver; 			// Create a pointer to a MySQL driver object
 	sql::Connection *con; 			// Create a pointer to a database connection object
