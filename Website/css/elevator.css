@@ -1,0 +1,98 @@
+.button1 {
+    background-color: #4CAF50;
+    border:none;
+    color: white;
+    width:80px;
+    height:35px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.5s;
+    cursor:pointer;
+}
+
+.button1:hover{
+  background-color:#3399ff;
+    border:none;
+}
+.button1:active{
+  background-color:red;
+  transition-duration: 0.1s;
+      border:none;
+}
+.button1:visited{
+      border:none;
+
+}
+.button2 {
+    background-color: red;
+    border:none;
+    color: white;
+    width:150px;
+    height:35px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.5s;
+    cursor:pointer;
+}
+
+.button2:hover{
+  background-color:#3399ff;
+    border:none;
+}
+.button2:active{
+  background-color:orange;
+  transition-duration: 0.1s;
+      border:none;
+}
+.button2:visited{
+      border:none;
+
+}
+
+.mainbox{
+position: center;
+border-style: solid;
+border-color: red;
+border-radius: 20px;
+height: 90%;
+width: 50%;
+margin: auto;
+
+}
+.floor1div{
+padding:2rem;
+width:50%
+
+}
+.floor2div{
+padding:2rem;
+width:50%;
+
+}
+.floor3div{
+padding:2rem;
+width:50%;
+
+}
+.haltdiv{
+padding:2rem;
+width:50%;
+}
+.nfloor1{
+
+  padding: 1rem;
+}
+
+.nfloor2{
+
+  padding: 1rem;
+}
+
+.nfloor3{
+
+  padding: 1rem;
+}
