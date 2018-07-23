@@ -30,7 +30,7 @@ int main() {
 	int floorNumber = 1, prev_floorNumber = 1;
 	TPCANMsg Message;
 
-	db_clear();
+
 
 	while(1) {
 		system("@cls||clear");
@@ -52,7 +52,11 @@ int main() {
 			case 3:
 				printf("\nNow listening to commands from the website and Bus - press ctrl-z to cancel\n");
 				// Synchronize elevator db and CAN (start at 1st floor)
+				db_clear();
 
+				printf("\nClearing debugLog\n");
+
+				sleep(2);
 
 				while(1)
 				{
