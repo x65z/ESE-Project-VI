@@ -325,14 +325,10 @@ int db_updateLogger(int NodeID, int Message) {
       break;
   }
 
-printf("\nJust before clearing pointers\n");
 	// Clean up pointers
-//  delete res;
 	delete pstmt;
-//	delete stmt;
 	delete con;
 
-  printf("\nJust cleaned pointers\n");
 
   return(0);
 }
