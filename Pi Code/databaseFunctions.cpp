@@ -183,7 +183,7 @@ int db_setRequested(int floorNum) {
 	delete con;
 }
 
-/*
+
 int db_updateLogger(int NodeID, int Message) {
 	sql::Driver *driver; 				// Create a pointer to a MySQL driver object
 	sql::Connection *con; 				// Create a pointer to a database connection object
@@ -193,22 +193,103 @@ int db_updateLogger(int NodeID, int Message) {
 
 	// Create a connection
 	driver = get_driver_instance();
-	con = driver->connect("tcp://127.0.0.1:3306", "root", "");
-	con->setSchema("joinExample");
+	con = driver->connect("tcp://127.0.0.1:3306", "ESE", "ese");
+	con->setSchema("project");
 
 	// Query database (possibly not necessary)
 	// *****************************
+  /*
 	stmt = con->createStatement();
 	res = stmt->executeQuery("SELECT currentFloor FROM currentStatus WHERE id = 1");	// message query
 	while(res->next()){
 		res->getInt("currentFloor");
 	}
-
+  */
 	// Update database
 	// *****************************
-	pstmt = con->prepareStatement("UPDATE currentStatus SET currentFloor = ? WHERE id = 1");
-	pstmt->setInt(1, floorNum);
-	pstmt->executeUpdate();
+
+  switch (NodeID)
+  {
+    case 101:
+      switch (Message)
+      {
+        case 0:
+          pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x101','Elevator Controller','is moving')");
+	        pstmt->executeQuery();
+          break;
+
+        case 1:
+          pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x101','Elevator Controller','is at floor 1')");
+          pstmt->executeQuery();
+          break;
+
+        case 2:
+          pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x101','Elevator Controller','is at floor 2')");
+          pstmt->executeQuery();
+          break;
+
+        case 3:
+          pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x101','Elevator Controller','is at floor 3')");
+          pstmt->executeQuery();
+          break;
+
+        default:
+          pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x101','Elevator Controller','Message Error')");
+          pstmt->executeQuery();
+          break;
+      }
+      break;
+
+    case 200:
+      switch (Message)
+      {
+        case 0:
+          pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x200','Elevator Car','Requests stop')");
+          pstmt->executeQuery();
+          break;
+
+        case 1:
+          pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x200','Elevator Car','Requests floor 1')");
+          pstmt->executeQuery();
+          break;
+
+        case 2:
+          pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x200','Elevator Car','Requests floor 2')");
+          pstmt->executeQuery();
+          break;
+
+        case 3:
+          pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x200','Elevator Car','Requests floor 3')");
+          pstmt->executeQuery();
+          break;
+
+        default:
+          pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x200','Elevator Controller','Message Error')");
+          pstmt->executeQuery();
+          break;
+    }
+    break;
+
+    case 201:
+      pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x201','Floor 1','Requests floor 1')");
+      pstmt->executeQuery();
+      break;
+
+    case 202:
+      pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x202','Floor 2','Requests floor 2')");
+      pstmt->executeQuery();
+      break;
+
+    case 203:
+      pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'0x203','Floor 3','Requests floor 3')");
+      pstmt->executeQuery();
+      break;
+
+    default:
+      pstmt = con->prepareStatement("INSERT INTO debugLog(timestamp, nodeID, node, message) VALUES (NOW(),'Error - Invalid ID','Error - Invalid ID','Unknown')");
+      pstmt->executeQuery();
+      break;
+  }
 
 	// Clean up pointers
 	delete res;
@@ -216,4 +297,3 @@ int db_updateLogger(int NodeID, int Message) {
 	delete stmt;
 	delete con;
 }
-*/
