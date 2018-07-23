@@ -275,7 +275,7 @@ int BusToDatabase(int num_msgs)
 	{
 		while((status = CAN_Read(h2, &Rxmsg)) == PCAN_RECEIVE_QUEUE_EMPTY)
 		{
-			sleep(1);
+			usleep(10000);
 		}
 		if(status != PCAN_NO_ERROR)
 		{						// If there is an error, display the code
@@ -425,7 +425,7 @@ int DatabaseToBus(int num_msgs)
 	volatile int Request = db_getRequested(); //get the value in the requested floor column of the database
 
 	printf("\nRequest = %d LastRequest = %d\n", Request, LastRequest);
-	sleep(1);
+	usleep(10000);
 	if (Request != LastRequest) //check to see if the requested floor changed since last time
 	{
 		// Open a CAN channel
@@ -451,25 +451,25 @@ int DatabaseToBus(int num_msgs)
 				case 0:
 					pcanTx(ID_SC_TO_EC, 0x01); //should disable the elevator (Emergency Stop)
 					printf("\nI just sent to CAN bus\n");
-					usleep(100000);
+					usleep(10000);
 					break;
 
 				case 1:
 					pcanTx(ID_SC_TO_EC, GO_TO_FLOOR1); //Send request to go to floor 1
 					printf("\nI just sent to CAN bus\n");
-					usleep(100000);
+					usleep(10000);
 					break;
 
 				case 2:
 					pcanTx(ID_SC_TO_EC, GO_TO_FLOOR2); //Send request to go to floor 2
 					printf("\nI just sent to CAN bus\n");
-					usleep(100000);
+					usleep(10000);
 					break;
 
 				case 3:
 					pcanTx(ID_SC_TO_EC, GO_TO_FLOOR3); //Send request to go to floor 3
 					printf("\nI just sent to CAN bus\n");
-					usleep(100000);
+					usleep(10000);
 					break;
 
 				default:
