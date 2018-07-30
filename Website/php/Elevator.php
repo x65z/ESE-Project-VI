@@ -1,58 +1,49 @@
 <?php
   //ZH PHP to process elevator request, send to database
 	session_start(); //starts a session and creates a session variable
+$out = NULL;
+	//$name = $_POST["Username"];
+	//$password = $_POST["Password"];
 
-	//$name = $_POST["Username"]; 
-	//$password = $_POST["Password"]; 
-	
+	//input processing starts
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //something posted
-	echo "button pressed";
-	echo "<br/>";
-    if (isset($_POST['Floor1'])) {
-        echo "Floor1";
-    } else if (isset($_POST['Floor2'])) {
-		echo "Floor2";
-	} else if (isset($_POST['Floor3'])) {
-		echo "Floor3";
-	} else {
-        //assume halt
-		echo "Halt";
-    }
-}
-/*
+		//something posted
+		echo "button pressed";
+		echo "<br/>";
+		if (isset($_POST['Floor1'])) {
+			echo "Floor1";
+			$out = 1;
+		} else if (isset($_POST['Floor2'])) {
+			echo "Floor2";
+			$out = 2;
+		} else if (isset($_POST['Floor3'])) {
+			echo "Floor3";
+			$out = 3;
+		} else if (isset($_POST['Halt'])) {
+			echo "Halt";
+			$out = 0;
+		} else {
+			echo "Button Error";
+		}
+	}
+
+if ($out != NULL)
+{
+	//connection to database starts
 	$db = new PDO(
-		'mysql:host=127.0.0.1;dbname=elevator', //Data Source Name
-		'root',					  //Username
-		''					  //Password
+		'mysql:host=127.0.0.1:3306;dbname=project', //Data Source Name
+		'ESE',					  //Username
+		'ese'					  //Password
 	);
 
-		$query = 'SELECT user, password FROM users WHERE user = :user AND  password = :password'; // Formatted Query, parameters identified by ':'
-		$statement = $db->prepare($query);	
+		//$query = 'SELECT elevatorNetwork, password FROM users WHERE user = :user AND  password = :password'; // Formatted Query, parameters identified by ':'
+		$query = 'UPDATE status (requestedFloor) VALUES (:out);';
+		$statement = $db->prepare($query);
 		$params = [
-		'user' => $name,    // Array containing the data
-		'password' => $password
+		'out' => $out    // Array containing the data
 	];
 	$result = $statement->execute($params); // execute is the method for inserting the formatted array into the database
-	$count = $statement->rowCount();
-	//$mysqli = new mysqli('localhost', 'admin', 'password', 'elevator');
-	
-	 //mysqli_select_db($mysqli,'elevator');
-	
-	//$result1 = $mysqli->query("SELECT user, password FROM users WHERE user = '".$name."' AND  password = '".$password."'");
-	
-	if($count > 0)
-	{ 
-		$_SESSION["logged_in"] = true; 
-		$_SESSION["name1"] = $name; 
-		
-		echo 'Login successful';
-	}
-	else
-	{
-		echo 'The username or password are incorrect!';
-		//echo $result1 ? 'true' : 'false';
-	}
 
-*/
+	echo "<br/>Wrote to database";
+}
 ?>
