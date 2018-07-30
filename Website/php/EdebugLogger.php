@@ -1,9 +1,9 @@
 <?php
-  //ZH PHP to process elevator request, send to database
+  
 	session_start(); //starts a session and creates a session variable
 
-	$out = $_POST["pval"]; 
-	
+	$out = $_POST["pval"];
+
 	if ($out == 0)
 	{
 		$out = "Requested Stop";
@@ -20,10 +20,10 @@
 	{
 		$out = "Requested Floor 3";
 	}
-	
-	
-	//$name = $_POST["Username"]; 
-	//$password = $_POST["Password"]; 
+
+
+	//$name = $_POST["Username"];
+	//$password = $_POST["Password"];
 	//$out = intval($_GET['q']);
 	//connection to database starts
 	$db = new PDO(
@@ -33,16 +33,16 @@
 	);
 
 	 // Formatted Query, parameters identified by ':'
-		
+
 		$query = "INSERT INTO debugLog (timestamp, nodeID, node, message) VALUES (NOW(),'N/A', 'Website' , ':out')";
 
-		
-		$statement = $db->prepare($query);	
+
+		$statement = $db->prepare($query);
 		$params = [
 		'out' => $out    // Array containing the data
 	];
-	$result = $statement->execute($params); // execute is the method for inserting the formatted array into the database	
-	
+	$result = $statement->execute($params); // execute is the method for inserting the formatted array into the database
+
 	echo "<br/>Wrote to database";
 
 ?>
