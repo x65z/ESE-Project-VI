@@ -1,5 +1,5 @@
 <?php
-  //ZH PHP to process elevator request, send to database
+  //PHP to process elevator request, send to database
 	session_start(); //starts a session and creates a session variable
 $out = NULL;
 	//$name = $_POST["Username"];
